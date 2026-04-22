@@ -780,6 +780,22 @@ body {
 }
 
 /* ========================================
+   DESIGN PARTNERS SECTION
+   ======================================== */
+.section-partners {
+    padding: var(--space-2xl) 0;
+    background: var(--color-bg-secondary);
+    text-align: center;
+}
+
+.section-subtitle-center {
+    font-size: 1.125rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-top: var(--space-md);
+}
+
+/* ========================================
    CTA SECTION
    ======================================== */
 .section-cta {
