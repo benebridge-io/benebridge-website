@@ -15,78 +15,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ====================================
-// Contact Form Handling
+// Contact Form Handling (Netlify Forms)
 // ====================================
 const contactForm = document.getElementById('contactForm');
 const formSuccess = document.getElementById('formSuccess');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Get form data
-        const formData = {
-            name: contactForm.name.value,
-            email: contactForm.email.value,
-            institution: contactForm.institution.value,
-            title: contactForm.title.value,
-            message: contactForm.message.value,
-            timestamp: new Date().toISOString()
-        };
-
-        // Log to console (for now - you'll replace this with actual API call)
-        console.log('Form submission:', formData);
-
-        // For now, just show success message
-        // In production, you'd send this to your backend or email service
-        contactForm.style.display = 'none';
-        formSuccess.style.display = 'block';
-
-        // Send email notification (you can use a service like Formspree, EmailJS, or your own backend)
-        // Example with EmailJS (you'd need to set this up):
-        /*
-        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
-            .then(() => {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('There was an error submitting the form. Please email dan@benebridge.io directly.');
-            });
-        */
-
-        // Alternative: Use Formspree (free service)
-        /*
-        fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => {
-            if (response.ok) {
-                contactForm.style.display = 'none';
-                formSuccess.style.display = 'block';
-            }
-        });
-        */
-
-        // Simple email mailto fallback
-        const subject = encodeURIComponent(`Demo Request from ${formData.name}`);
-        const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Institution: ${formData.institution}
-Title: ${formData.title}
-
-Message:
-${formData.message}
-        `);
-
-        // Optional: also trigger mailto link
-        // window.location.href = `mailto:dan@benebridge.io?subject=${subject}&body=${body}`;
+    contactForm.addEventListener('submit', function(e) {
+        // Let the form submit naturally to Netlify
+        // Netlify will handle the form submission and email notification
+        setTimeout(() => {
+            contactForm.style.display = 'none';
+            formSuccess.style.display = 'block';
+        }, 100);
     });
 }
 
