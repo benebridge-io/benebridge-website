@@ -17,19 +17,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // ====================================
 // Contact Form Handling (Netlify Forms)
 // ====================================
-const contactForm = document.getElementById('contactForm');
-const formSuccess = document.getElementById('formSuccess');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        // Let the form submit naturally to Netlify
-        // Netlify will handle the form submission and email notification
-        setTimeout(() => {
-            contactForm.style.display = 'none';
-            formSuccess.style.display = 'block';
-        }, 100);
-    });
-}
+// Form is handled entirely by Netlify - no JavaScript needed
+// Netlify will automatically capture submissions and redirect to a success page
 
 // ====================================
 // Navbar Scroll Effect
