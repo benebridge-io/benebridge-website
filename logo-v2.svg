@@ -1,0 +1,11 @@
+<svg width="180" height="36" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Ribbon-style minimal icon - abstract connection symbol -->
+  <g id="icon">
+    <!-- Two interlocking arcs - representing connection/bridge -->
+    <path d="M6 20 Q10 10, 14 20" stroke="#1a4d7a" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+    <path d="M18 14 Q22 20, 26 14" stroke="#14b8a6" stroke-width="2.8" stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Modern sans-serif text -->
+  <text x="36" y="23" font-family="system-ui, -apple-system, 'Inter', sans-serif" font-size="18" font-weight="600" fill="#0f172a" letter-spacing="-0.4">BeneBridge</text>
+</svg>
