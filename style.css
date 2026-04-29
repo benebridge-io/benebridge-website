@@ -65,7 +65,7 @@ body {
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--color-border);
     z-index: 1000;
-    padding: 1rem 0;
+    padding: 0.35rem 0;
 }
 
 .nav-container {
@@ -185,12 +185,20 @@ body {
 
 .hero-stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-lg);
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+        max-width: 100%;
+    }
 }
 
 .stat-item {
@@ -579,6 +587,43 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--space-lg);
     margin-top: var(--space-xl);
+}
+
+.benefits-grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+@media (max-width: 968px) {
+    .benefits-grid-3col {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile responsiveness for Transform section */
+@media (max-width: 768px) {
+    .benefits-two-col {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Mobile responsiveness for How it works section */
+@media (max-width: 768px) {
+    .workflow-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+}
+
+/* Mobile responsiveness for Dashboard previews */
+@media (max-width: 968px) {
+    .dashboard-preview-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
 }
 
 .benefit-card {
